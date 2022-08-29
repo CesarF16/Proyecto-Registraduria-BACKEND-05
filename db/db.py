@@ -10,6 +10,7 @@ class Db:
   def __init__(self): 
     self.client = pymongo.MongoClient(config['DB_URL']) # conexión col el cliente DB
     self.db = self.client.get_database() # Referencia a la base de datos trae la información
+    #print(self.db.list_collection_names())
     
   def collection(self, name):
     return self.db.get_collection(name)

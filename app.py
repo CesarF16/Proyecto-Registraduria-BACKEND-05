@@ -1,10 +1,12 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 from dotenv import dotenv_values
+#from db.db import Db
 
 config = dotenv_values('.env')
 app = Flask(__name__)
 cors = CORS(app)
+#Db = Db() # instancia de la base de datos
 
 @app.route('/')
 def hello_world():
