@@ -1,0 +1,3 @@
+
+class MesaControlador():
+    pass
