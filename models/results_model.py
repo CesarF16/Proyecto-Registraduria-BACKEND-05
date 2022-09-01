@@ -1,4 +1,4 @@
 from models.abstract_model import AbstractModel
 
-class MesaModel(AbstractModel):
+class ResultsModel(AbstractModel):
     pass
