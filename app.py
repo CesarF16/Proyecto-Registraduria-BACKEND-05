@@ -1,13 +1,17 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 from dotenv import dotenv_values
-from routes.mesa_routes import mesa_modulo
+#from db.db import Db
+
+from routes.table_routes import table_module
 
 config = dotenv_values('.env')
 app = Flask(__name__)
 cors = CORS(app)
+#Db = Db() # instancia de la base de datos
 
-app.register_blueprint(mesa_modulo, url_prefix ='/mesas')
+app.register_blueprint(table_module, url_prefix="/mesa")
+
 
 @app.route('/')
 def hello_world():
