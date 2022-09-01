@@ -2,13 +2,14 @@ from models.results_model import ResultsModel
 from db.results_repository import ResultsRepository
 from db.table_repository import TableRepository
 from models.table_model import TableModel
+from models.candidate_model import CandidateModel
 from db.candidate_repository import CandidateRepository
 
 class ResultsController():
     def __init__(self) -> None:
         self.repo = ResultsRepository()
         self.repo_table = TableRepository()
-        # self.repo_candidate = CandidateRepository()
+        self.repo_candidate = CandidateRepository()
 
         #Retorna una lista
     def get(self, args):
@@ -42,17 +43,17 @@ class ResultsController():
         return self.repo.get_by_id(id)
   
     #Método de creación de la mesa
-    def post(self,data, table_id,candidate_id): 
+    def post(self,data, table_id,candidate_id):
         results = ResultsModel(data)
         table = self.repo_table.get_by_id(table_id)
         results.table = TableModel(table)
         candidate = self.repo_candidate.get_by_id(candidate_id)
-        candidate[votes] = results.votes
+        candidate['votes'] = results.votes
         results.candidate = CandidateModel(candidate)
 
         #Validate some fields
         return {
-        "id": self.repo.save(table)
+        "id": self.repo.save(results)
         }
     #Método de actulizar 
     def update(self,id, data):

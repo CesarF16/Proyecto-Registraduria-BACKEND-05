@@ -13,7 +13,7 @@ def get_results():
 @results_module.post('/mesa/<string:table_id>/candidato/<string:candidate_id>')
 # @logger
 def post_results(table_id, candidate_id):
-  return jsonify(controller.post(request.get_json()),table_id, candidate_id), 201
+  return jsonify(controller.post(request.get_json(),table_id, candidate_id)), 201
 
 @results_module.get('/<string:id>')
 def results_by_table(id):
