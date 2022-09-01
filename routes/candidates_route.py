@@ -13,11 +13,11 @@ def getCandidates():
     return jsonify(controller.get(request.args))
 
 
-@candidate_module.post('/')
+@candidate_module.post('/partidos/<string:partido_id>')
 #@logger
-def createCandidate():
+def createCandidate(partido_id):
     # Devuelve 201 porque es un método POST
-    return jsonify(controller.create(request.get_json())), 201
+    return jsonify(controller.create(request.get_json(), partido_id)), 201
 
 
 @candidate_module.get('/<string:id>')
