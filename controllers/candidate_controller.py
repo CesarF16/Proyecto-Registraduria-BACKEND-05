@@ -34,7 +34,7 @@ class CandidateController():
             return self.repo.get_all()
         return self.repo.query(filter)
 
-    def getById(self, id):
+    def get_by_id(self, id):
         return self.repo.get_by_id(id)
 
 # CREATE
