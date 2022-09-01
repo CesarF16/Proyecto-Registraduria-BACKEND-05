@@ -3,7 +3,7 @@ from flask import jsonify, request, Blueprint
 from controllers.candidate_controller import CandidateController
 #from decorators.logger_decorator import logger
 
-candidate_module = Blueprint('candidates', __name__)
+candidate_module = Blueprint('candidatos', __name__)
 controller = CandidateController()
 
 

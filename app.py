@@ -5,6 +5,7 @@ from dotenv import dotenv_values
 
 from routes.table_routes import table_module
 from routes.results_routes import results_module
+from routes.candidates_route import candidate_module
 
 config = dotenv_values('.env')
 app = Flask(__name__)
@@ -13,6 +14,7 @@ cors = CORS(app)
 
 app.register_blueprint(table_module, url_prefix="/mesa")
 app.register_blueprint(results_module, url_prefix="/resultados")
+app.register_blueprint(candidate_module, url_prefix="/candidatos")
 
 
 @app.route('/')

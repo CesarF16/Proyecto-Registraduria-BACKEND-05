@@ -2,7 +2,7 @@ from models.results_model import ResultsModel
 from db.results_repository import ResultsRepository
 from db.table_repository import TableRepository
 from models.table_model import TableModel
-from db.canditate_repository import CandidateRepository
+from db.candidate_repository import CandidateRepository
 
 class ResultsController():
     def __init__(self) -> None:
