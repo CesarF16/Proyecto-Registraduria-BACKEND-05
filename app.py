@@ -13,13 +13,10 @@ cors = CORS(app)
 #Db = Db() # instancia de la base de datos
 
 app.register_blueprint(table_module, url_prefix="/mesa")
-<<<<<<< HEAD
 app.register_blueprint(partido_module, url_prefix="/partidos")
-=======
 app.register_blueprint(results_module, url_prefix="/resultados")
 app.register_blueprint(candidate_module, url_prefix="/candidatos")
 
->>>>>>> 5cb2edbc205c5a31b32b3edf411bff947f6425a2
 
 @app.route('/')
 def hello_world():
