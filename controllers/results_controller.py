@@ -64,5 +64,20 @@ class ResultsController():
     def delete(self,id):
         self.repo.delete(id)
 
+    #Total resultados 
+    def get_total(self):
+        return self.repo.get_resultado_total()
+    #Total resultados candidato
+    def total_candidato(self, candidato_id):
+        return self.repo.total_candidato(candidato_id)
+    #Total resultados mesa
+    def get_total_mesa(self):
+        return self.repo.get_total_mesa()
+    #Total resultados partido
+    def get_total_partido(self):
+        return self.repo.get_total_partido()
+
+    
+
 
 

@@ -28,3 +28,24 @@ def update_table(id):
 def delete_table(id):
   controller.delete(id)
   return jsonify({}), 204
+
+#Total de votos por todos los candidatos
+@results_module.get('/total')
+def get_total():
+    return jsonify(controller.get_total())
+
+#Total de votos para un candidato
+@results_module.get('/totalCandidato/<string:candidato_id>')
+def total_candidato(candidato_id):
+    return jsonify(controller.total_candidato(candidato_id))
+
+#Total de votos para cada candidato por mesa
+@results_module.get('/totalMesa')
+def get_total_mesa():
+    return jsonify(controller.get_total_mesa())
+
+#Total de votos por partido
+@results_module.get('/totalPartido')
+def get_total_partido():
+    return jsonify(controller.get_total_partido())
+
